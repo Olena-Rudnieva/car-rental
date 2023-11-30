@@ -1,4 +1,4 @@
-import { Logo } from 'components/Logo/Logo';
+// import { Logo } from 'components/Logo/Logo';
 import { HeaderWrapper, Nav, StyledLink } from './Header.styled';
 
 export const Header = () => {
