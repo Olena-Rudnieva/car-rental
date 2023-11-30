@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const ContainerWrapper = styled.div`
   width: 100vw;
-  margin: 0, auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 15px;
 
   @media (min-width: 375px) {

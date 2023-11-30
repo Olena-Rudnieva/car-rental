@@ -6,16 +6,18 @@ import { Container } from 'components/Container/Container';
 
 export const Layout = () => {
   return (
-    <Container>
+    <>
       <Header />
-      <main>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Outlet />
-        </Suspense>
-      </main>
-      <footer>
-        <Footer />
-      </footer>
-    </Container>
+      <Container>
+        <main>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Outlet />
+          </Suspense>
+        </main>
+        <footer>
+          <Footer />
+        </footer>
+      </Container>
+    </>
   );
 };
