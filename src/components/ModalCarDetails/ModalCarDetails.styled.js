@@ -70,23 +70,3 @@ export const AccentText = styled.span`
   font-weight: 600;
   color: var(--blue);
 `;
-
-export const LinkButton = styled.a`
-  color: var(--white);
-  font-family: 'Manrope', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.43;
-  background: var(--blue);
-  /* padding: 12px, 50px; */
-  width: 168px;
-  height: 44px;
-  border-radius: 12px;
-  border: none;
-  transition: background 300ms var(--transition);
-
-  &:hover,
-  &:focus {
-    background: var(--accent);
-  }
-`;

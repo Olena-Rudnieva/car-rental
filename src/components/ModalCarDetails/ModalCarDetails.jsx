@@ -4,7 +4,6 @@ import {
   Img,
   TitleWrapper,
   Title,
-  Price,
   TitleAccent,
   Subtitle,
   CarDescription,
@@ -13,7 +12,6 @@ import {
   BlockWrapper,
   Block,
   AccentText,
-  LinkButton,
 } from './ModalCarDetails.styled';
 import { splitAddress } from 'components/utils/splitAddress';
 import { splitRentalConditions } from 'components/utils/splitRentalConditions';

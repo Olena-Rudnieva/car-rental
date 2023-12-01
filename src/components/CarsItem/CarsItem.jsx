@@ -14,10 +14,7 @@ import { splitAddress } from 'components/utils/splitAddress';
 import { Button } from 'components/Button/Button';
 import { useState } from 'react';
 import { BasicModalWindow } from 'components/BasicModalWindow/BasicModalWindow';
-import {
-  CarDetails,
-  ModalCarDetails,
-} from 'components/ModalCarDetails/ModalCarDetails';
+import { ModalCarDetails } from 'components/ModalCarDetails/ModalCarDetails';
 
 export const CarsItem = ({ car }) => {
   const {
