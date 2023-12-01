@@ -20,6 +20,7 @@ import {
   Item,
 } from 'components/CarDetailsDescription/CarDetailsDescription.styled';
 import { Button } from 'components/Button/Button';
+import { changedMileage } from 'components/utils/сhangedMileage';
 
 export const ModalCarDetails = ({ handleModalToggle, car }) => {
   const {
@@ -94,7 +95,7 @@ export const ModalCarDetails = ({ handleModalToggle, car }) => {
         <Block>{licence}</Block>
         <Block>{required}</Block>
         <Block>
-          Mileage: <AccentText>{mileage}</AccentText>
+          Mileage: <AccentText>{changedMileage(mileage)}</AccentText>
         </Block>
         <Block>
           Price: <AccentText>{rentalPrice}</AccentText>

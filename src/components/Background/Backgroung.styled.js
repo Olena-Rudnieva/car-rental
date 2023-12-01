@@ -14,7 +14,10 @@ export const Wrapper = styled.div`
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  background-image: linear-gradient(rgba(142, 174, 251, 0.01), #ffffff),
+  background-image: linear-gradient(
+      rgba(142, 174, 251, 0.01),
+      rgba(255, 255, 255, 0.8)
+    ),
     url(${image});
   text-align: end;
 `;
