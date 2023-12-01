@@ -12,6 +12,12 @@ import {
 } from './CarsItem.styled';
 import { splitAddress } from 'components/utils/splitAddress';
 import { Button } from 'components/Button/Button';
+import { useState } from 'react';
+import { BasicModalWindow } from 'components/BasicModalWindow/BasicModalWindow';
+import {
+  CarDetails,
+  ModalCarDetails,
+} from 'components/ModalCarDetails/ModalCarDetails';
 
 export const CarsItem = ({ car }) => {
   const {
@@ -26,6 +32,13 @@ export const CarsItem = ({ car }) => {
     functionalities,
     address,
   } = car;
+
+  const [modal, setModal] = useState(false);
+
+  const handleModal = () => {
+    setModal(state => !state);
+    document.body.classList.toggle('body-scroll-lock');
+  };
 
   const { city, country } = splitAddress(address);
 
@@ -52,7 +65,16 @@ export const CarsItem = ({ car }) => {
             functionalities={functionalities}
           />
         </TextWrapper>
-        <Button padding={'12px 98px'} text={'Learn more'} />
+        <Button
+          padding={'12px 98px'}
+          text={'Learn more'}
+          handleClick={handleModal}
+        />
+        {modal && (
+          <BasicModalWindow handleModalToggle={handleModal}>
+            <ModalCarDetails handleModalToggle={handleModal} car={car} />
+          </BasicModalWindow>
+        )}
       </CarItem>
     </CarWrapper>
   );

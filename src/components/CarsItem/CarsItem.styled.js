@@ -47,6 +47,10 @@ export const TitleWrapper = styled.div`
 
 export const Title = styled.p`
   color: var(--black);
+  max-width: 235px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 `;
 
 export const TitleAccent = styled.span`

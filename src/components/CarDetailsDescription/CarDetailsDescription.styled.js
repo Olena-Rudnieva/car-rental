@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
+export const Wrapper = styled.div`
+  max-width: 300px;
+  max-height: 40px;
+  margin-bottom: 14px;
+`;
+
 export const Description = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
   width: 100%;
-  margin-bottom: 28px;
-  max-height: 40px;
   color: var(--semiblack);
 `;
 
