@@ -3,8 +3,7 @@ import { Container } from 'components/Container/Container';
 import { Loader } from 'components/Loader/Loader';
 import { useSelector } from 'react-redux';
 import { selectFavorites, selectIsLoading } from 'redux/selectors';
-import { Item, List, StyledLink, Text, Wrapp } from './Favorites.styled';
-import { Link } from 'react-router-dom';
+import { List, StyledLink, Text, Wrapp } from './Favorites.styled';
 import { Section } from 'components/Section/Section';
 
 const Favorite = () => {
