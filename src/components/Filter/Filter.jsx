@@ -3,7 +3,7 @@ import { Input, InputWrapper, Label, Wrapper, Button } from './Filter.styled';
 import Select from 'react-select';
 import { selectBrands, selectCars, selectPrice } from 'redux/selectors';
 import { useState } from 'react';
-import { addFilter, filterCars } from 'redux/filterSlice';
+import { addFilter } from 'redux/filterSlice';
 import { stylesBrand, stylesPrice } from './filtersStyles';
 
 export const Filter = () => {
@@ -14,7 +14,6 @@ export const Filter = () => {
   const dispatch = useDispatch();
   const brands = useSelector(selectBrands);
   const prices = useSelector(selectPrice);
-  const cars = useSelector(selectCars);
 
   const handleChange = e => {
     switch (e.target.name) {
