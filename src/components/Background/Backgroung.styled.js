@@ -2,10 +2,6 @@ import styled from 'styled-components';
 import image from '../../images/road.jpg';
 
 export const Wrapper = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
   padding: 150px;
   margin: 0;
   width: 100%;

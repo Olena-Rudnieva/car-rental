@@ -10,6 +10,7 @@ export const CarItem = styled.div`
 `;
 
 export const ImgWrapper = styled.div`
+  position: relative;
   overflow: hidden;
   border-radius: 14px;
   width: 274px;
@@ -26,7 +27,8 @@ export const Img = styled.img`
   transform: scale(1);
   transition: 0.3s ease-in-out;
 
-  &:hover {
+  &:hover,
+  &:focus {
     transform: scale(1.1);
   }
 `;

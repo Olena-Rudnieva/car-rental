@@ -1,40 +1,113 @@
-import { Form } from './Filter.styled';
+import { useDispatch, useSelector } from 'react-redux';
+import { Input, InputWrapper, Label, Wrapper, Button } from './Filter.styled';
+import Select from 'react-select';
+import { selectBrands, selectCars, selectPrice } from 'redux/selectors';
+import { useState } from 'react';
+import { addFilter, filterCars } from 'redux/filterSlice';
+import { stylesBrand, stylesPrice } from './filtersStyles';
 
 export const Filter = () => {
+  const [brand, setBrand] = useState({ value: 'all', label: 'Enter the text' });
+  const [price, setPrice] = useState({ value: 'all', label: 'To $' });
+  const [mileage, setMileage] = useState({ min: '', max: '' });
+
+  const dispatch = useDispatch();
+  const brands = useSelector(selectBrands);
+  const prices = useSelector(selectPrice);
+  const cars = useSelector(selectCars);
+
+  const handleChange = e => {
+    switch (e.target.name) {
+      case 'min':
+        setMileage(prevMileage => ({
+          ...prevMileage,
+          min: e.target.value,
+        }));
+        break;
+      case 'max':
+        setMileage(prevMileage => ({
+          ...prevMileage,
+          max: e.target.value,
+        }));
+        break;
+      default:
+        return;
+    }
+  };
+
+  const reset = () => {
+    setBrand({ value: 'all', label: 'Enter the text' });
+    setPrice({ value: 'all', label: 'To $' });
+    setMileage({ min: '', max: '' });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const data = {
+      brand: brand.value,
+      price: price.value,
+      mileage: { min: mileage.min, max: mileage.max },
+    };
+    dispatch(addFilter(data));
+    reset();
+  };
+
   return (
     <>
-      <Form>
-        <label>
-          Car brand
-          <select name="brand">
-            <option defaultValue="Brand">Please choose car brand</option>
-          </select>
-        </label>
-        <label>
-          Price/ 1 hour
-          <select name="price">
-            <option defaultValue="Brand">To $</option>
-          </select>
-        </label>
-        <label>
-          Сar mileage / km
-          <input
-            type="number"
-            name="mileageFrom"
-            placeholder="From"
-            min="0"
-            step="10"
+      <Wrapper>
+        <InputWrapper>
+          <Label htmlFor="brand">Car brand </Label>
+          <Select
+            id="brand"
+            value={brand}
+            options={brands}
+            onChange={setBrand}
+            isSearchable
+            styles={stylesBrand}
+            placeholder="Enter the text"
           />
-        </label>
-        <input
-          type="number"
-          name="mileageTo"
-          placeholder="To"
-          min="10"
-          step="10"
-        />
-        <button type="submit">Search</button>
-      </Form>
+        </InputWrapper>
+
+        <InputWrapper>
+          <Label htmlFor="price">Price/ 1 hour </Label>
+          <Select
+            id="price"
+            value={price}
+            options={prices}
+            onChange={setPrice}
+            isSearchable
+            styles={stylesPrice}
+            placeholder="To $"
+          />
+        </InputWrapper>
+
+        <form onSubmit={handleSubmit}>
+          <Label htmlFor="min">Сar mileage / km </Label>
+          <InputWrapper>
+            <Input
+              id="min"
+              name="min"
+              type="number"
+              value={mileage.min}
+              placeholder="From:"
+              onChange={handleChange}
+              left={true.toString()}
+            />
+          </InputWrapper>
+
+          <InputWrapper>
+            <Input
+              name="max"
+              value={mileage.max}
+              type="number"
+              placeholder="To:"
+              onChange={handleChange}
+            />
+          </InputWrapper>
+
+          <Button type="submit">Search</Button>
+        </form>
+      </Wrapper>
     </>
   );
 };

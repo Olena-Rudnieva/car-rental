@@ -10,11 +10,12 @@ import {
   TitleAccent,
   Price,
 } from './CarsItem.styled';
-import { splitAddress } from 'components/utils/splitAddress';
+import { splitAddress } from 'utils/splitAddress';
 import { Button } from 'components/Button/Button';
 import { useState } from 'react';
 import { BasicModalWindow } from 'components/BasicModalWindow/BasicModalWindow';
 import { ModalCarDetails } from 'components/ModalCarDetails/ModalCarDetails';
+import { FavoritesHeart } from '../../components/FavoritesHeart/FavoritesHeart';
 
 export const CarsItem = ({ car }) => {
   const {
@@ -43,6 +44,7 @@ export const CarsItem = ({ car }) => {
     <CarWrapper>
       <CarItem>
         <ImgWrapper>
+          <FavoritesHeart car={car} />
           <Img src={img} alt={model} />
         </ImgWrapper>
         <TextWrapper>
@@ -64,6 +66,7 @@ export const CarsItem = ({ car }) => {
         </TextWrapper>
         <Button
           padding={'12px 98px'}
+          type={'button'}
           text={'Learn more'}
           handleClick={handleModal}
         />

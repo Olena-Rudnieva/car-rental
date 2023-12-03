@@ -6,7 +6,6 @@ import { Loader } from 'components/Loader/Loader';
 import { Section } from 'components/Section/Section';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { removeFilter } from 'redux/filterSlice';
 import { fetchCars } from 'redux/operations';
 import { selectCars, selectIsLoading } from 'redux/selectors';
 

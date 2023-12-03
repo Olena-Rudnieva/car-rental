@@ -1,9 +1,9 @@
-import { Puff } from 'react-loader-spinner';
+import { ThreeDots } from 'react-loader-spinner';
 import { LoaderWrapper } from './Loader.styled';
 
 export const Loader = () => (
   <LoaderWrapper>
-    <Puff
+    <ThreeDots
       height="80"
       width="80"
       radius={1}

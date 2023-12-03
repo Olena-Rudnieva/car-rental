@@ -20,7 +20,8 @@ export const Icon = styled.svg`
 
   transition: scale 200ms var(--transition), stroke 200ms var(--transition);
 
-  &:hover {
+  &:hover,
+  &:focus {
     stroke: var(--blue);
     scale: 1.2;
   }

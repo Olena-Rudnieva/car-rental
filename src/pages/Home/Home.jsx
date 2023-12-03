@@ -1,9 +1,9 @@
-import { Backgroung } from 'components/Background/Background';
+import { Background } from 'components/Background/Background';
 
 const Home = () => {
   return (
     <div>
-      <Backgroung />
+      <Background />
     </div>
   );
 };

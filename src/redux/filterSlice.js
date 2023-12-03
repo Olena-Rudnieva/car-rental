@@ -3,19 +3,18 @@ import { createSlice } from '@reduxjs/toolkit';
 export const filterSlice = createSlice({
   name: 'filter',
   initialState: {
-    filter: { brand: '', price: '', mileage: { min: '', max: '' } },
+    filter: null,
+    filteredCars: [],
   },
   reducers: {
-    addFilter: (state, action) =>
-      (state.filter[action.payload.filter] = action.payload.value),
-    removeFilter(state) {
-      state.filter.brand = '';
-      state.filter.price = '';
-      state.filter.mileage.max = '';
-      state.filter.mileage.min = '';
+    addFilter(state, { payload }) {
+      state.filter = payload;
+    },
+    filterCars(state, { payload }) {
+      state.filteredCars = payload;
     },
   },
 });
 
-export const { addFilter, removeFilter } = filterSlice.actions;
+export const { addFilter, filterCars } = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;
