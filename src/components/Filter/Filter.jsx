@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Input, InputWrapper, Label, Wrapper, Button } from './Filter.styled';
 import Select from 'react-select';
-import { selectBrands, selectPrice } from 'redux/selectors';
+import { selectBrands, selectFilter, selectPrice } from 'redux/selectors';
 import { useState } from 'react';
 import { addFilter } from 'redux/filterSlice';
 import { stylesBrand, stylesPrice } from './filtersStyles';
@@ -48,6 +48,7 @@ export const Filter = () => {
       mileage: { min: mileage.min, max: mileage.max },
     };
     dispatch(addFilter(data));
+
     reset();
   };
 
@@ -90,7 +91,7 @@ export const Filter = () => {
               value={mileage.min}
               placeholder="From:"
               onChange={handleChange}
-              left={true.toString()}
+              left="true"
             />
           </InputWrapper>
 
