@@ -48,6 +48,7 @@ export const Filter = () => {
       mileage: { min: mileage.min, max: mileage.max },
     };
     dispatch(addFilter(data));
+
     reset();
   };
 
@@ -90,7 +91,7 @@ export const Filter = () => {
               value={mileage.min}
               placeholder="From:"
               onChange={handleChange}
-              left={true.toString()}
+              left="true"
             />
           </InputWrapper>
 
