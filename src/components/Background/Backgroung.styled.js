@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import image from '../../images/road.jpg';
 
 export const Wrapper = styled.div`
-  padding: 150px;
+  padding: 80px 150px;
   margin: 0;
   width: 100%;
   height: 100vh;
@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
     ),
     url(${image});
   text-align: end;
+  overflow: hidden;
 `;
 
 export const TextWrapper = styled.div`
