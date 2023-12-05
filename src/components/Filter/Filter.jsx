@@ -3,7 +3,7 @@ import { Input, InputWrapper, Label, Wrapper, Button } from './Filter.styled';
 import Select from 'react-select';
 import { selectBrands, selectPrice } from 'redux/selectors';
 import { useState } from 'react';
-import { addFilter } from 'redux/filterSlice';
+import { addFilter, removeFilter } from 'redux/filterSlice';
 import { stylesBrand, stylesPrice } from './filtersStyles';
 
 export const Filter = () => {
@@ -48,7 +48,10 @@ export const Filter = () => {
       mileage: { min: mileage.min, max: mileage.max },
     };
     dispatch(addFilter(data));
+  };
 
+  const handleRemoveFilter = () => {
+    dispatch(removeFilter());
     reset();
   };
 
@@ -94,7 +97,6 @@ export const Filter = () => {
               left="true"
             />
           </InputWrapper>
-
           <InputWrapper>
             <Input
               name="max"
@@ -104,8 +106,10 @@ export const Filter = () => {
               onChange={handleChange}
             />
           </InputWrapper>
-
-          <Button type="submit">Search</Button>
+          <Button type="submit">Search</Button>{' '}
+          <Button type="button" onClick={handleRemoveFilter}>
+            Reset
+          </Button>
         </form>
       </Wrapper>
     </>

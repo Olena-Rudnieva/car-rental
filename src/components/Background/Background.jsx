@@ -24,7 +24,7 @@ export const Background = () => {
       <div>
         <TextWrapper>
           <Title>Rent a Car </Title>
-          <Subtitle>Journey near and far</Subtitle>
+          <Subtitle>Journey near and far!</Subtitle>
         </TextWrapper>
 
         <motion.div

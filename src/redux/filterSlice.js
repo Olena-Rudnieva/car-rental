@@ -13,8 +13,11 @@ export const filterSlice = createSlice({
     filterCars(state, { payload }) {
       state.filteredCars = payload;
     },
+    removeFilter(state, { payload }) {
+      state.filter = null;
+    },
   },
 });
 
-export const { addFilter, filterCars } = filterSlice.actions;
+export const { addFilter, filterCars, removeFilter } = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;

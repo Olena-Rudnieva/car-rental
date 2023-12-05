@@ -6,18 +6,7 @@ export const selectFavorites = state => state.cars.favorites;
 export const selectFilter = state => state.filter.filter;
 
 export const selectAllBrands = state => selectCars(state);
-// export const selectBrands = createSelector([selectAllBrands], cars => {
-//   const cars = selectCars(state);
-//   const brands = cars.map(item => item.make);
-//   const uniqueBrands = brands.filter(
-//     (price, index, array) => array.indexOf(price) === index
-//   );
-//   const brandsArray = Array.from(uniqueBrands).map(brand => ({
-//     value: brand.toLowerCase(),
-//     label: brand,
-//   }));
-//   return brandsArray;
-// };
+
 export const selectBrands = createSelector([selectAllBrands], cars => {
   const brands = cars.map(item => item.make);
   const uniqueBrands = brands.filter(
@@ -48,4 +37,4 @@ export const selectPrice = createSelector([selectAllPrice], cars => {
   return priceOption;
 });
 
-export const selectFilteredCars = state => state.filter.filterCars;
+export const selectFilteredCars = state => state.filter.filteredCars;
