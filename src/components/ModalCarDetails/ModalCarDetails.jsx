@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { CarDetailsDescription } from 'components/CarDetailsDescription/CarDetailsDescription';
 import {
   Wrapper,
@@ -109,4 +110,26 @@ export const ModalCarDetails = ({ handleModalToggle, car }) => {
       />
     </Wrapper>
   );
+};
+
+ModalCarDetails.propTypes = {
+  handleModalToggle: PropTypes.func.isRequired,
+  car: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    make: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
+    rentalPrice: PropTypes.string.isRequired,
+    rentalCompany: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    functionalities: PropTypes.arrayOf(PropTypes.string).isRequired,
+    address: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    accessories: PropTypes.arrayOf(PropTypes.string).isRequired,
+    fuelConsumption: PropTypes.string.isRequired,
+    engineSize: PropTypes.string.isRequired,
+    rentalConditions: PropTypes.string.isRequired,
+    mileage: PropTypes.number.isRequired,
+    img: PropTypes.string.isRequired,
+  }).isRequired,
 };

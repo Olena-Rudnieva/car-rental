@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Heart, IconEmpty, IconFavorite } from './FavoritesHeart.styled';
 import sprite from '../../images/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,4 +27,10 @@ export const FavoritesHeart = ({ car }) => {
       )}
     </Heart>
   );
+};
+
+FavoritesHeart.propTypes = {
+  car: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+  }).isRequired,
 };

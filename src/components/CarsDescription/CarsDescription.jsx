@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Description, Item } from './CarsDescription.styled';
 
 export const CarsDescription = ({
@@ -20,4 +21,14 @@ export const CarsDescription = ({
       <Item>{functionalities[0]}</Item>
     </Description>
   );
+};
+
+CarsDescription.propTypes = {
+  city: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  rentalCompany: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  model: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  functionalities: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

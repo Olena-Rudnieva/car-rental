@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Description, Item, Wrapper } from './CarDetailsDescription.styled';
 
 export const CarDetailsDescription = ({
@@ -22,4 +23,14 @@ export const CarDetailsDescription = ({
       </Description>
     </Wrapper>
   );
+};
+
+CarDetailsDescription.propTypes = {
+  city: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  year: PropTypes.number.isRequired,
+  fuelConsumption: PropTypes.string.isRequired,
+  engineSize: PropTypes.string.isRequired,
 };

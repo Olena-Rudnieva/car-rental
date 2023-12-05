@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { CarsDescription } from 'components/CarsDescription/CarsDescription';
 import {
   CarWrapper,
@@ -78,4 +79,19 @@ export const CarsItem = ({ car }) => {
       </CarItem>
     </CarWrapper>
   );
+};
+
+CarsItem.propTypes = {
+  car: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    make: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
+    img: PropTypes.string.isRequired,
+    rentalPrice: PropTypes.string.isRequired,
+    rentalCompany: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    functionalities: PropTypes.arrayOf(PropTypes.string).isRequired,
+    address: PropTypes.string.isRequired,
+  }).isRequired,
 };
