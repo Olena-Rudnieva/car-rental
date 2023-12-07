@@ -19,10 +19,23 @@ export const Nav = styled.nav`
 export const StyledLink = styled(NavLink)`
   color: var(--white);
   text-shadow: 2px 2px 10px #2d3e56;
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   line-height: 1.1;
   &.active {
     color: var(--accent);
+  }
+
+  @media (min-width: 375px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 30px;
+    font-weight: 600;
   }
 `;

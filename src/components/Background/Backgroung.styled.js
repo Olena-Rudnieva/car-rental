@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import image from '../../images/road.jpg';
 
 export const Wrapper = styled.div`
-  padding: 80px 150px;
+  padding: 170px 50px;
   margin: 0;
   width: 100%;
   height: 100vh;
@@ -15,8 +15,17 @@ export const Wrapper = styled.div`
       rgba(255, 255, 255, 0.8)
     ),
     url(${image});
-  text-align: end;
+  text-align: center;
   overflow: hidden;
+
+  @media (min-width: 768px) {
+    padding: 40px 70px;
+    text-align: end;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 80px 150px;
+  }
 `;
 
 export const TextWrapper = styled.div`
@@ -25,17 +34,53 @@ export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+
+  @media (min-width: 768px) {
+    margin-bottom: 80px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 0;
+  }
 `;
 
 export const Title = styled.h1`
-  font-size: 72px;
+  font-size: 44px;
   font-weight: 600;
+  margin-bottom: 44px;
+
+  @media (min-width: 375px) {
+    font-size: 48px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 72px;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
 `;
 
 export const Subtitle = styled.h2`
-  font-size: 50px;
+  font-size: 32px;
+
+  @media (min-width: 375px) {
+    font-size: 34px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 50px;
+  }
 `;
 
 export const Img = styled.img`
-  width: 800px;
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+    width: 500px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 800px;
+  }
 `;

@@ -31,6 +31,6 @@ export const FavoritesHeart = ({ car }) => {
 
 FavoritesHeart.propTypes = {
   car: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
   }).isRequired,
 };
