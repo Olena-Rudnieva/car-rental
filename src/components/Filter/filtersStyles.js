@@ -9,7 +9,10 @@ const generalStyles = {
   }),
   valueContainer: styles => ({
     ...styles,
-    padding: '14px 18px',
+    padding: '10px 4px',
+    '@media (min-width: 768px)': {
+      padding: '14px 18px',
+    },
   }),
 
   indicatorsContainer: (styles, state) => ({
@@ -35,23 +38,36 @@ const generalStyles = {
 
   singleValue: styles => ({
     ...styles,
-    fontSize: '18px',
+    fontSize: '14px',
     lineHeight: '1.11',
     color: 'var(--color-text-main)',
+    '@media (min-width: 768px)': {
+      fontSize: '18px',
+    },
   }),
 
   placeholder: styles => ({
     ...styles,
-    fontSize: '18px',
-    color: '#121417',
+    color: 'var(--black)',
     fontWeight: '500',
+    fontSize: '14px',
+    lineHeight: '1.11',
+    margin: '0px',
+    padding: '0px',
+    '@media (min-width: 768px)': {
+      fontSize: '18px',
+    },
   }),
+
   option: (styles, state) => ({
     ...styles,
     color: state.isFocused ? '#121417' : 'rgba(18, 20, 23, 0.20)',
     backgroundColor: 'transparent',
     fontWeight: '500',
-    fontSize: '16px',
+    fontSize: '14px',
+    '@media (min-width: 768px)': {
+      fontSize: '16px',
+    },
   }),
 };
 
@@ -59,14 +75,19 @@ export const stylesBrand = {
   ...generalStyles,
   control: styles => ({
     ...generalStyles.control(styles),
-    width: '224px',
+    width: '160px',
+    '@media (min-width: 768px)': {
+      width: '224px',
+    },
   }),
 };
-
 export const stylesPrice = {
   ...generalStyles,
   control: styles => ({
     ...generalStyles.control(styles),
-    width: '145px',
+    width: '100px',
+    '@media (min-width: 768px)': {
+      width: '145px',
+    },
   }),
 };

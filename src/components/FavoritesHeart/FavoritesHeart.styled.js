@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Heart = styled.button`
   position: absolute;
-  /* padding: 5px; */
   top: 14px;
   right: 14px;
   border: none;

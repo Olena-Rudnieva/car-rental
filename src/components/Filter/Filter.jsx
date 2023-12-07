@@ -1,5 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Input, InputWrapper, Label, Wrapper, Button } from './Filter.styled';
+import {
+  InputWrapper,
+  Label,
+  Wrapper,
+  Button,
+  MileageWrapper,
+  LeftInput,
+  RightInput,
+  ButtonWrapper,
+  FilterWrapper,
+  Form,
+  CommonInputWrapper,
+  LowerLabel,
+} from './Filter.styled';
 import Select from 'react-select';
 import { selectBrands, selectPrice } from 'redux/selectors';
 import { useState } from 'react';
@@ -58,59 +71,65 @@ export const Filter = () => {
   return (
     <>
       <Wrapper>
-        <InputWrapper>
-          <Label htmlFor="brand">Car brand </Label>
-          <Select
-            id="brand"
-            value={brand}
-            options={brands}
-            onChange={setBrand}
-            isSearchable
-            styles={stylesBrand}
-            placeholder="Enter the text"
-          />
-        </InputWrapper>
+        <Form onSubmit={handleSubmit}>
+          <FilterWrapper>
+            <CommonInputWrapper>
+              <InputWrapper>
+                <Label htmlFor="brand">Car brand </Label>
+                <Select
+                  id="brand"
+                  value={brand}
+                  options={brands}
+                  onChange={setBrand}
+                  isSearchable
+                  styles={stylesBrand}
+                  placeholder="Enter the text"
+                />
+              </InputWrapper>
+              <InputWrapper>
+                <Label htmlFor="price">Price/ 1 hour </Label>
+                <Select
+                  id="price"
+                  value={price}
+                  options={prices}
+                  onChange={setPrice}
+                  isSearchable
+                  styles={stylesPrice}
+                  placeholder="To $"
+                />
+              </InputWrapper>
+            </CommonInputWrapper>
 
-        <InputWrapper>
-          <Label htmlFor="price">Price/ 1 hour </Label>
-          <Select
-            id="price"
-            value={price}
-            options={prices}
-            onChange={setPrice}
-            isSearchable
-            styles={stylesPrice}
-            placeholder="To $"
-          />
-        </InputWrapper>
-
-        <form onSubmit={handleSubmit}>
-          <Label htmlFor="min">Сar mileage / km </Label>
-          <InputWrapper>
-            <Input
-              id="min"
-              name="min"
-              type="number"
-              value={mileage.min}
-              placeholder="From:"
-              onChange={handleChange}
-              left="true"
-            />
-          </InputWrapper>
-          <InputWrapper>
-            <Input
-              name="max"
-              value={mileage.max}
-              type="number"
-              placeholder="To:"
-              onChange={handleChange}
-            />
-          </InputWrapper>
-          <Button type="submit">Search</Button>{' '}
-          <Button type="button" onClick={handleRemoveFilter}>
-            Reset
-          </Button>
-        </form>
+            <MileageWrapper>
+              <LowerLabel htmlFor="min">Сar mileage / km </LowerLabel>
+              <InputWrapper>
+                <LeftInput
+                  id="min"
+                  name="min"
+                  type="number"
+                  value={mileage.min}
+                  placeholder="From:"
+                  onChange={handleChange}
+                />
+              </InputWrapper>
+              <InputWrapper>
+                <RightInput
+                  name="max"
+                  value={mileage.max}
+                  type="number"
+                  placeholder="To:"
+                  onChange={handleChange}
+                />
+              </InputWrapper>
+            </MileageWrapper>
+          </FilterWrapper>
+          <ButtonWrapper>
+            <Button type="submit">Search</Button>
+            <Button type="button" onClick={handleRemoveFilter}>
+              Reset
+            </Button>
+          </ButtonWrapper>
+        </Form>
       </Wrapper>
     </>
   );
