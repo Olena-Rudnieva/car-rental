@@ -29,6 +29,6 @@ CarsDescription.propTypes = {
   rentalCompany: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   model: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   functionalities: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

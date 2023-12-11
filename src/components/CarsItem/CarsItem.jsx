@@ -83,7 +83,7 @@ export const CarsItem = ({ car }) => {
 
 CarsItem.propTypes = {
   car: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     make: PropTypes.string.isRequired,
     model: PropTypes.string.isRequired,
     year: PropTypes.number.isRequired,
