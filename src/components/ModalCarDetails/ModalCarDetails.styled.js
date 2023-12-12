@@ -1,16 +1,26 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  padding: 40px;
-  width: 549px;
+  padding: 10px;
+  width: 305px;
+
+  @media (min-width: 768px) {
+    padding: 40px;
+    width: 549px;
+  }
 `;
 
 export const Img = styled.img`
-  width: 469px;
-  height: 248px;
+  width: 290px;
+  height: 153px;
   border-radius: 14px;
   object-fit: cover;
   margin-bottom: 14px;
+
+  @media (min-width: 768px) {
+    width: 469px;
+    height: 248px;
+  }
 `;
 
 export const TitleWrapper = styled.div`
