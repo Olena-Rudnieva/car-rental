@@ -1,36 +1,40 @@
 ![Home](./public/home.jpg)
 
-# Тестове завдання
+# Car Rental
 
-Створити застосунок для компанії, що надає послуги надання в Україні автомобілів
-в оренду.
+This is a car rental agency website that allows users to choose a suitable car,
+filter models based on specific criteria, and create a list of favorite models.
 
-## Застосунок складається з 3х сторінок:
+## Features
 
-домашня сторінка з загальним описом послуг, що надає компанія. Стилізація та
-оформлення на ваш розсуд. сторінка, що містить каталог автівок різної
-комплектації, які користувач може фільтрувати за маркою, ціною за годину оренди
-авто та кількістю кілометрів, яку подолав автомобіль під час його експлуатації
-(пробіг). сторінка з оголошеннями, які були додані користувачем в улюблені
-Зовнішній вигляд програми повинен складатися з навігації(оформлення на ваш
-розсуд) та області перегляду.
+- Explore a catalog of cars
+- Filter cars based on various criteria (brand, price, mileage)
+- Save selected cars as favorites
+- Enable pagination for browsing through the car list
 
-## Технічне завдання
+## Technologies used:
 
-Відповідно до макету реалізувати картку оголошення про здачу авто в оренду. На
-першій сторінці каталогу має рендеритися 12 оголошень, а їх решта - по кліку на
-кнопку Load more. У разі кліку по кнопці у вигляді “серця” на картці оголошення
-воно має додаватися до списку улюблених, а колір кнопки змінюватися. При
-оновленні сторінки має фіксуватись кінцевий результат дій користувача. Тобто,
-якщо додати оголошення в улюблені та оновити сторінку - то кнопка все одно
-залишається в стані “улюбленого оголошення” із відповідним кольором. У разі
-повторного кліку по кнопці у вигляді “серця” оголошення повинно бути видалене зі
-списку улюблених, а колір кнопки змінитись до початкового стану. У разі кліку по
-кнопці Learn more має відкриватись модальне вікно з детальною інформацією про
-авто та умови його оренди. Модальне вікно повинно закриватись по кліку на кнопку
-у вигляді “хрестика”, по кліку на backdrop або натисканню на клавішу Esc. В коді
-пробіг авто має бути прописаний одним значенням (наприклад, 4500). В UI -
-виведено через кому (4,500). Кнопку Rental car слід реалізувати як посилання, що
-надаватиме можливість користувачу зʼєднатись з компанією за номером телефону
-+380730000000. Додай фільтрацію. dropdown із марками автомобіля makes.json -
-показати оголошення з автівками відповідної марки
+- React.js
+- Redux Toolkit
+- Styled Components
+- MockAPI
+
+## Live page
+
+The live page can be accessed through the following link:
+https://olena-rudnieva.github.io/car-rental/
+
+## Test Task
+
+Create an application for a company providing car rental services in Ukraine.
+The application consists of three pages:
+
+- Home page with a general description of the services offered by the company.
+  Styling and design are at your discretion.
+
+- Catalog page featuring cars of various configurations. Users can filter cars
+  by brand, hourly rental price, and mileage covered during usage.
+
+- Advertisements page displaying ads added by the user in favorites. The
+  program's appearance should include navigation (styled at your discretion) and
+  a viewing area.
